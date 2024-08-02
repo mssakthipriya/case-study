@@ -1,0 +1,14 @@
+releases:
+
+  - name: helloapp
+    chart: ../helmchart
+    installed: true 
+    values:
+      - ingress:
+          enabled: true
+          host: "casestudy.local.yarowa.io"
+          annotations:
+            nginx.ingress.kubernetes.io/rewrite-target: /
+        service:
+          port: 80
+     
